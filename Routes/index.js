@@ -8,7 +8,7 @@ var User_availability = require("../Models/user_availability");
 module.exports = function (app) {
 
   //Create user or availability
-  app.get('/', function (req, res) {
+  app.get('/api', function (req, res) {
     res.status(200).json({
       "data": {
         create_availability: " POST /api/user/availability ",

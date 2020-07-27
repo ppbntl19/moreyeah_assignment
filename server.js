@@ -7,6 +7,7 @@ const app = express(); // create express app
 app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static("public"));
 
 
