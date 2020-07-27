@@ -1,0 +1,24 @@
+{
+  "name": "MoreYeahAvailablityLogic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start-dev": "nodemon index.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "4.17.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.31",
+    "mongoose": "^5.9.2",
+    "nodemon": "2.0.3",
+    "pug": "^2.0.4",
+    "underscore": "^1.10.2"
+  },
+  "engines": {
+    "node": "v12.10.0",
+    "npm": "6.10.3"
+  }
+}
