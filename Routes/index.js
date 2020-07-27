@@ -50,7 +50,7 @@ module.exports = function (app) {
         var new_user = new User({
           userName: req.body.userName,
           firstName: req.body.firstName,
-          lastName: req.body.lastName
+          lastName: req.body.lastName,
         });
         //Save user
         new_user.save(function (err, result) {
@@ -118,10 +118,21 @@ module.exports = function (app) {
           }
         })
         //Update group
-        group = response;
+        groups[key] = response;
       }
       //Cover here Or anaywhere on above loop to based on user time zone
-      //Returen
+      //Convery date time based on timezone
+      if ( req.query.timezone ) {
+        for (var key in groups) {
+          var group = groups[key]
+          //Get values for one field
+          group.forEach(function (date, index) {
+            date.startTime =    timezone(date.startTime).tz( req.query.timezone).format("YYYY-MM-DD HH:mm:ss z");
+            date.endTime =    timezone(date.endTime).tz( req.query.timezone).format("YYYY-MM-DD HH:mm:ss z")
+          })
+        }
+      }
+      //Return
       return res.status(200).json({ "data": groups });
     })
   });

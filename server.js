@@ -15,7 +15,7 @@ app.use(express.static("public"));
 require('./Routes')(app);
 
 //Set up default mongoose connection
-var mongoDB = process.env.MONGOLAB_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1/my_database';
+var mongoDB = "mongodb://heroku_f5zk7sf4:m1sc8k7ttdmvps1d1h0iva2r9c@ds239968.mlab.com:39968/heroku_f5zk7sf4" || process.env.MONGOLAB_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1/my_database';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 //Get the default connection

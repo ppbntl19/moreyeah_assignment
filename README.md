@@ -48,6 +48,9 @@ Response :
 # Get user availability
 http://localhost:8080/api/user/availability:userID
 
+With time zone
+http://localhost:8080/api/user/availability/5f1e7f2f2c5c32001799dc73?timezone=Asia/Calcutta
+
 Type GET
 
 ```
@@ -102,5 +105,3 @@ Response :
 ```
 
 # TODO
-
-Return data based on usertime zone --  Or better do this on client side
